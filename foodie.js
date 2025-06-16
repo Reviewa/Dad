@@ -9,11 +9,12 @@
 ^https?:\/\/content-static\.snowcam\.cn\/.*\/priorityRuleInfo url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/foodie.js
 ^https?:\/\/content-static\.snowcam\.cn\/.*\/productList url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/foodie.js
 ^https?:\/\/content-static\.snowcam\.cn\/.*\/storeInfo url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/foodie.js
+^https?:\/\/foodie-api\.yiruikecorp\.com\/v\d\/(banner|notice)\/overview url reject-200
 ^https?:\/\/adimage\.bwton\.com\/.*\.(jpg|jpeg|png|gif|webp)$ url reject-200
 ^https?:\/\/zjres-ad\.kajicam\.com\/ad-creative\/resource\/.* url reject-200
 
 [MITM]
-hostname = content-static.snowcam.cn, adimage.bwton.com, zjres-ad.kajicam.com
+hostname = content-static.snowcam.cn, foodie-api.yiruikecorp.com, adimage.bwton.com, zjres-ad.kajicam.com
 
 */
 
