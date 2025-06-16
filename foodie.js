@@ -25,28 +25,34 @@ if (obj.result && Array.isArray(obj.result.assets)) {
   });
 }
 
-function processItems(items) {
-  if (!Array.isArray(items)) return;
-  items.forEach(item => {
+if (obj.result && Array.isArray(obj.result.items)) {
+  obj.result.items.forEach(item => {
     if (item.groups && Array.isArray(item.groups)) {
       item.groups.forEach(group => {
-        if (group.items && Array.isArray(group.items)) processGroupItems(group.items);
+        if (group.items && Array.isArray(group.items)) {
+          group.items.forEach(subItem => {
+            if (subItem.itemProperty && subItem.itemProperty.vip === true) delete subItem.itemProperty.vip;
+            if (subItem.itemBridges && Array.isArray(subItem.itemBridges)) {
+              subItem.itemBridges.forEach(bridge => {
+                if (bridge.vip === true) delete bridge.vip;
+              });
+            }
+          });
+        }
       });
     }
-    if (item.items && Array.isArray(item.items)) processGroupItems(item.items);
-  });
-}
-function processGroupItems(items) {
-  items.forEach(item => {
-    if (item.itemProperty && item.itemProperty.vip === true) delete item.itemProperty.vip;
-    if (item.itemBridges && Array.isArray(item.itemBridges)) {
-      item.itemBridges.forEach(bridge => {
-        if (bridge.vip === true) delete bridge.vip;
+    if (item.items && Array.isArray(item.items)) {
+      item.items.forEach(subItem => {
+        if (subItem.itemProperty && subItem.itemProperty.vip === true) delete subItem.itemProperty.vip;
+        if (subItem.itemBridges && Array.isArray(subItem.itemBridges)) {
+          subItem.itemBridges.forEach(bridge => {
+            if (bridge.vip === true) delete bridge.vip;
+          });
+        }
       });
     }
   });
 }
-if (obj.result && obj.result.items) processItems(obj.result.items);
 
 if (obj.result && Array.isArray(obj.result.vipSegments)) {
   obj.result.vipSegments = ["ACTIVE_VIP"];
