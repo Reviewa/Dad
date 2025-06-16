@@ -1,7 +1,7 @@
 /*
 
 项目名称：Foodie美食相机
-下载地址：https://apps.apple.com/cn/app/foodie-%E7%BE%8E%E9%A3%9F%E7%9B%B8%E6%9C%BA/id1336411132
+
 [rewrite_local]
 ^https?:\/\/purchase-foodiecn-api\.yiruikecorp\.com\/v1\/purchase\/subscription\/subscriber\/status url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/foodie.js
 ^https?:\/\/content-static\.snowcam\.cn\/.*\/assets url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/foodie.js
