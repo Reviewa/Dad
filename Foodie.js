@@ -3,7 +3,7 @@
 项目名称：Foodie美食相机
 下载地址：
 [rewrite_local]
-^https?:\/\/purchase-foodiecn-api\.yiruikecorp\.com\/v1\/purchase\/subscription\/subscriber\/status url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/foodie.js
+^https?:\/\/purchase-foodiecn-api\.yiruikecorp\.com\/v1\/purchase\/subscription\/subscriber\/status url script-response-body https://raw.githubusercontent.com/Reviewa/Dad/refs/heads/main/Foodie.js
 
 [MITM]
 hostname = purchase-foodiecn-api.yiruikecorp.com
